@@ -1,0 +1,58 @@
+  
+    <div class="col-md-9 panel panel-default" style="margin-left: 14%;">
+      <div class="panel-heading">
+        <h3 class="panel-title">Patient : {{study.PatientMainDicomTags.PatientID}}</h3>
+      </div>
+      <div class="panel-body">
+        <dl>
+            <dt>Patient Name</dt>
+            <dd>{{study.PatientMainDicomTags.PatientID}}</dd>
+            <dt>Sex</dt>
+            <dd>{{study.PatientMainDicomTags.PatientSex}}</dd>
+            <dt>Birth Date</dt>
+            <dd>{{study.PatientMainDicomTags.PatientBirthDate}}</dd>
+        </dl>    
+      </div>
+      <div class="panel-heading">
+        <h3 class="panel-title">Study : {{study.MainDicomTags.StudyID}}</h3>
+      </div>
+      <div class="panel-body">
+        <dl>
+            <dt>Study Description</dt>
+            <dd>{{study.MainDicomTags.StudyDescription}}</dd>
+            <dt>Study ID</dt>
+            <dd>{{study.MainDicomTags.StudyID}}</dd>
+            <dt>Is Stable</dt>
+            <dd>{{IsStable}}</dd>
+            <dt>Study Date</dt>
+            <dd>{{study.MainDicomTags.StudyDate}}</dd>
+            <dt>StudyTime</dt>
+            <dd>{{study.MainDicomTags.StudyTime}}</dd>
+            <dt>Series</dt>
+            <dd>{{study.Series.length}}</dd>
+        </dl>    
+      </div>
+      {{#each r}}
+        <div class="panel-heading">
+          <h3 class="panel-title">Series : {{this.MainDicomTags.ProtocolName}}</h3>
+        </div>
+        <div class="panel-body">
+          <dl>
+              <dt>BodyPartExamined</dt>
+              <dd>{{this.MainDicomTags.BodyPartExamined}}</dd>
+              <dt>ContrastBolusAgent</dt>
+              <dd>{{this.MainDicomTags.ContrastBolusAgent}}</dd>
+              <dt>Manufacturer</dt>
+              <dd>{{this.MainDicomTags.Manufacturer}}</dd>
+              <dt>Modality</dt>
+              <dd>{{this.MainDicomTags.Modality}}</dd>
+              <dt>OperatorsName</dt>
+              <dd>{{this.MainDicomTags.OperatorsName}}</dd>
+              <dt>StationName</dt>
+              <dd>{{this.MainDicomTags.StationName}}</dd>
+              <dt>Instances</dt>
+              <dd><a href="/instances/{{this.ParentStudy}}/{{this.ID}}">{{this.Instances.length}}</a></dd>
+          </dl>    
+        </div>
+      {{/each}}
+    </div>

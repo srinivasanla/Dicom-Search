@@ -1,0 +1,11 @@
+{
+  "name": "dicom",
+  "description": "dicom search",
+  "version": "0.0.1",
+  "dependencies": {
+    "async": "^2.1.5",
+    "express": "3.x",
+    "express-handlebars": "1.1.0",
+    "request": "^2.81.0"
+  }
+}

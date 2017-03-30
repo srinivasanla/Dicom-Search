@@ -1,0 +1,79 @@
+  
+    <div class="col-md-9 panel panel-default" style="margin-left: 14%;">
+      <div class="panel-heading">
+        <h3 class="panel-title">Patient : {{study.PatientMainDicomTags.PatientID}}</h3>
+      </div>
+      <div class="panel-body">
+        <dl>
+            <dt>Patient Name</dt>
+            <dd>{{study.PatientMainDicomTags.PatientID}}</dd>
+            <dt>Sex</dt>
+            <dd>{{study.PatientMainDicomTags.PatientSex}}</dd>
+            <dt>Birth Date</dt>
+            <dd>{{study.PatientMainDicomTags.PatientBirthDate}}</dd>
+        </dl>    
+      </div>
+      <div class="panel-heading">
+        <h3 class="panel-title">Study : {{study.MainDicomTags.StudyID}}</h3>
+      </div>
+      <div class="panel-body">
+        <dl>
+            <dt>Study Description</dt>
+            <dd>{{study.MainDicomTags.StudyDescription}}</dd>
+            <dt>Study ID</dt>
+            <dd>{{study.MainDicomTags.StudyID}}</dd>
+            <dt>Is Stable</dt>
+            <dd>{{IsStable}}</dd>
+            <dt>Study Date</dt>
+            <dd>{{study.MainDicomTags.StudyDate}}</dd>
+            <dt>StudyTime</dt>
+            <dd>{{study.MainDicomTags.StudyTime}}</dd>
+            <dt>Series</dt>
+            <dd>{{study.Series.length}}</dd>
+        </dl>    
+      </div>
+      <div class="panel-heading">
+        <h3 class="panel-title">Series : {{series.MainDicomTags.ProtocolName}}</h3>
+      </div>
+      <div class="panel-body">
+        <dl>
+            <dt>BodyPartExamined</dt>
+            <dd>{{series.MainDicomTags.BodyPartExamined}}</dd>
+            <dt>ContrastBolusAgent</dt>
+            <dd>{{series.MainDicomTags.ContrastBolusAgent}}</dd>
+            <dt>Manufacturer</dt>
+            <dd>{{series.MainDicomTags.Manufacturer}}</dd>
+            <dt>Modality</dt>
+            <dd>{{series.MainDicomTags.Modality}}</dd>
+            <dt>OperatorsName</dt>
+            <dd>{{series.MainDicomTags.OperatorsName}}</dd>
+            <dt>StationName</dt>
+            <dd>{{series.MainDicomTags.StationName}}</dd>
+            <dt>Instances</dt>
+            <dd><a href="/studies/{{ID}}">{{series.Instances.length}}</a></dd>
+        </dl>    
+      </div>
+      {{#each instances}}
+        <div class="panel-heading">
+          <h3 class="panel-title">Series : {{this.SOPInstanceUID}}</h3>
+        </div>
+        <div class="panel-body">
+          <dl>
+              <dt>FileSize</dt>
+              <dd>{{this.FileSize}}</dd>
+              <dt>FileUuid</dt>
+              <dd>{{this.MFileUuid}}</dd>
+              <dt>IndexInSeries</dt>
+              <dd>{{this.IndexInSeries}}</dd>
+              <dt>AcquisitionNumber</dt>
+              <dd>{{this.MainDicomTags.AcquisitionNumber}}</dd>
+              <dt>InstanceNumber</dt>
+              <dd>{{this.MainDicomTags.InstanceNumber}}</dd>
+              <dt>SOPInstanceUID</dt>
+              <dd>{{this.MainDicomTags.SOPInstanceUID}}</dd>
+              <dt>Instances</dt>
+              <dd><a href="/instances/{{this.ParentStudy}}/{{this.ID}}">{{this.Instances.length}}</a></dd>
+          </dl>    
+        </div>
+      {{/each}}
+    </div>

@@ -1,0 +1,35 @@
+
+    <div class="col-md-9 panel panel-default" style="margin-left: 14%;">
+      <div class="panel-heading">
+        <h3 class="panel-title">Patient : {{PatientMainDicomTags.PatientID}}</h3>
+      </div>
+      <div class="panel-body">
+        <dl>
+            <dt>Patient Name</dt>
+            <dd>{{PatientMainDicomTags.PatientID}}</dd>
+            <dt>Sex</dt>
+            <dd>{{PatientMainDicomTags.PatientSex}}</dd>
+            <dt>Birth Date</dt>
+            <dd>{{PatientMainDicomTags.PatientBirthDate}}</dd>
+        </dl>    
+      </div>
+      <div class="panel-heading">
+        <h3 class="panel-title">Study : {{MainDicomTags.StudyID}}</h3>
+      </div>
+      <div class="panel-body">
+        <dl>
+            <dt>Study Description</dt>
+            <dd>{{MainDicomTags.StudyDescription}}</dd>
+            <dt>Study ID</dt>
+            <dd>{{MainDicomTags.StudyID}}</dd>
+            <dt>Is Stable</dt>
+            <dd>{{IsStable}}</dd>
+            <dt>Study Date</dt>
+            <dd>{{MainDicomTags.StudyDate}}</dd>
+            <dt>StudyTime</dt>
+            <dd>{{MainDicomTags.StudyTime}}</dd>
+            <dt>Series - </dt>
+            <dd><a href="/series/{{ID}}">{{Series.length}}</a></dd>
+        </dl>    
+      </div>
+    </div>
