@@ -1,3 +1,17 @@
-{{#each data}}
-{{this.PatientID}}
-{{/each}}
+   <div class="col-md-9 panel panel-default" style="margin-left: 14%;">
+	{{#each data}}
+      <div class="panel-heading">
+        <h3 class="panel-title">Result : </h3>
+      </div>
+      <div class="panel-body">
+	  {{#each this}}
+        <dl>
+            <dt>{{@key}}</dt>
+            <dd>{{this}}</dd>
+        </dl>    
+	{{/each}}
+      </div>
+	{{/each}}
+    </div>
+	
+

@@ -3,8 +3,6 @@ const fs = require('fs');
 exports.Index = function(request, response){
 	console.log("in the post"+request.body.searchKey);
 	fs.readFile('results.txt', 'utf8', function (err,data) {
-	//console.log(data);
-
 		if (err) {
 			return console.log(err);
 		}
