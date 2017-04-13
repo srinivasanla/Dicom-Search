@@ -5,7 +5,7 @@ var http = require('http');
 exports.getResponse= function(url,callback) {
     
     var options = {
-                        host: '35.154.52.109',
+                        host: '*********',
                         port: 80,
                         path: url,
                         method: 'GET',
